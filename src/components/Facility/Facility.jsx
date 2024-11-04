@@ -21,8 +21,8 @@ const Facility = () => {
   return (
     <div className="max-w-7xl mx-auto pt-[74px] pb-[120px]">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {facilityData.map((facility) => (
-          <div className="flex items-center gap-4">
+        {facilityData.map((facility, index) => (
+          <div key={index} className="flex items-center gap-4">
             <div className="w-[90px] h-[90px] bg-[#FFFFFF] rounded-full shadow-xl flex items-center justify-center">
               <img src={facility.img} alt="" />
             </div>
