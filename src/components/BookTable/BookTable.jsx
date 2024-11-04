@@ -5,7 +5,7 @@ import { SlCalender } from "react-icons/sl";
 const BookTable = () => {
   return (
     <div className="book-table">
-      <div className="max-w-7xl mx-auto py-[120px]">
+      <div className="max-w-7xl mx-auto pt-[120px] pb-[85px]">
         <div className="w-[635px] mb-10">
           <p className="text-[#BD1F17] flex items-center text-[20px] font-bold gap-1">
             <FaSquare />

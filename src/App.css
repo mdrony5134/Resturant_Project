@@ -1,5 +1,6 @@
-.book-table{
-    background-image: url("/images/contact.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.book-table {
+  background-image: url("/images/contact.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top, bottom;
 }

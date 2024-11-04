@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import { FaAngleLeft, FaAngleRight, FaSquare } from "react-icons/fa";
 import PopularFoodCard from "./PopularFoodCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 
 const PopularFoods = () => {
- 
-  // popular food item data
   const foodItems = [
     {
       image: "/foodImage/burger.png",
@@ -52,6 +46,21 @@ const PopularFoods = () => {
     },
   ];
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slidesToShow = 4; 
+
+  const nextSlide = () => {
+    if (currentSlide < foodItems.length - slidesToShow) {
+      setCurrentSlide(currentSlide + 1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+    }
+  };
+
   return (
     <div className="bg-[#FBF7F2] py-[120px]">
       <div className="max-w-7xl mx-auto flex items-center justify-between pb-[60px]">
@@ -65,30 +74,32 @@ const PopularFoods = () => {
           </h1>
         </div>
         <div className="flex items-center gap-8">
-          <div className="w-[60px] h-[60px] bg-[#FFFFFF] rounded-full flex items-center justify-center shadow-md text-[20px] cursor-pointer">
+          <div
+            className="w-[60px] h-[60px] bg-[#FFFFFF] rounded-full flex items-center justify-center shadow-md text-[20px] cursor-pointer"
+            onClick={prevSlide}
+          >
             <FaAngleLeft />
           </div>
-          <div className="w-[60px] h-[60px] bg-[#FFFFFF] rounded-full flex items-center justify-center shadow-md text-[20px] cursor-pointer">
+          <div
+            className="w-[60px] h-[60px] bg-[#FFFFFF] rounded-full flex items-center justify-center shadow-md text-[20px] cursor-pointer"
+            onClick={nextSlide}
+          >
             <FaAngleRight />
           </div>
         </div>
       </div>
-      <Swiper
-        modules={[Navigation]}
-        slidesPerView={4}
-        spaceBetween={20}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
-        className="max-w-7xl mx-auto"
-      >
-        {foodItems.map((foodItem, index) => (
-          <SwiperSlide key={index}>
-            <PopularFoodCard foodItem={foodItem} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="max-w-7xl mx-auto overflow-hidden">
+        <div
+          className="flex transition-transform duration-300"
+          style={{ transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)` }}
+        >
+          {foodItems.map((foodItem, index) => (
+            <div className="flex-shrink-0 w-1/4 p-2" key={index}>
+              <PopularFoodCard foodItem={foodItem} />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
