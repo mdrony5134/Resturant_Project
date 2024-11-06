@@ -76,51 +76,59 @@ const Testimonial = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="overflow-hidden">
+          <div className="lg:absolute lg:left-0 lg:block hidden">
+            <img
+              className="w-[100px]"
+              src="/images/testimonial.png"
+              alt="testimonial image"
+            />
+          </div>
           <div
             className="flex transition-transform duration-700"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {testimonials.map(({ text, author, location, image, thumbnail }, index) => (
-              <div
-                key={index}
-                className="flex-none w-full flex"
-              >
-                <div className="bg-[#FEBF00] w-[550px] p-20">
-                  <p className="flex gap-2 text-[#0A1425] text-[20px]">
-                    <span><RiDoubleQuotesL /></span>
-                    {text}
-                  </p>
-                  <div className="flex justify-between items-center pt-[160px] border-b border-[#0A1425] pb-4">
-                    <div>
-                      <h2 className="text-[18px]">{author}</h2>
-                      <p className="text-[14px] text-[#333333]">{location}</p>
+            {testimonials.map(
+              ({ text, author, location, image, thumbnail }, index) => (
+                <div key={index} className="flex-none w-full flex">
+                  <div className="bg-[#FEBF00] w-[550px] p-20">
+                    <p className="flex gap-2 text-[#0A1425] text-[20px]">
+                      <span>
+                        <RiDoubleQuotesL />
+                      </span>
+                      {text}
+                    </p>
+                    <div className="flex justify-between items-center pt-[160px] border-b border-[#0A1425] pb-4">
+                      <div>
+                        <h2 className="text-[18px]">{author}</h2>
+                        <p className="text-[14px] text-[#333333]">{location}</p>
+                      </div>
+                      <div>
+                        <img
+                          className="w-10 h-10 rounded-full overflow-hidden"
+                          src={image}
+                          alt={`${author}'s image`}
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <img
-                        className="w-10 h-10 rounded-full overflow-hidden"
-                        src={image}
-                        alt={`${author}'s image`}
-                      />
+                    <div className="border-b-4 border-[#BD1F17] w-10 relative bottom-1 left-[350px]"></div>
+                  </div>
+                  <div className="relative w-[760px] h-[555px] overflow-hidden">
+                    <img
+                      src={thumbnail}
+                      alt="Video thumbnail"
+                      className="w-full h-full object-cover opacity-70"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-[#FFC900] rounded-full p-4">
+                        <FaPlay className="text-black text-3xl" />
+                      </div>
                     </div>
                   </div>
-                  <div className="border-b-4 border-[#BD1F17] w-10 relative bottom-1 left-[350px]"></div>
                 </div>
-                <div className="relative w-[760px] h-[555px] overflow-hidden">
-                  <img
-                    src={thumbnail}
-                    alt="Video thumbnail"
-                    className="w-full h-full object-cover opacity-70"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-[#FFC900] rounded-full p-4">
-                      <FaPlay className="text-black text-3xl" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
       </div>

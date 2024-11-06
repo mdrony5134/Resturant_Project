@@ -83,6 +83,9 @@ const About = () => {
           )}
         </div>
       </div>
+      <div className="lg:absolute lg:right-0 lg:-bottom-[1250px] hidden lg:block">
+          <img src="/images/aboutimg.png" alt="about image" />
+        </div>
     </div>
   );
 };

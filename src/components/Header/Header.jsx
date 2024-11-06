@@ -3,9 +3,9 @@ import Banner from "../Banner/Banner";
 
 const Header = () => {
   return (
-    <div className="bg-gradient py-8">
+    <div className="py-8 header">
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
           <img src="/images/logo.png" alt="logo image" />
           <span className="text-[28px] text-[#FFFFFF] font-semibold">Resturant</span>
 

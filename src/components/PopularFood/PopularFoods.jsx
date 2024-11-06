@@ -89,6 +89,9 @@ const PopularFoods = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto overflow-hidden">
+        <div className="lg:absolute lg:left-0 hidden lg:block">
+          <img className="w-[150px]" src="/images/popular.png" alt="popular image" />
+        </div>
         <div
           className="flex transition-transform duration-300"
           style={{ transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)` }}

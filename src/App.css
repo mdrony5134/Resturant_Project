@@ -1,12 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-
 h2,
 h1 {
   font-family: "Bebas Neue", sans-serif;
 }
-body{
+html{
+  overflow-x: hidden;
+}
+body {
   font-family: "Roboto", sans-serif;
+}
+.header {
+  background-image: url("/images/sliceorange.webp"),
+    linear-gradient(148deg, #bd1f17, #a51d13, #8e1b0f);
+  background-repeat: repeat;
+  background-size: 50px;
+  background-position: 0 0;
+  background-blend-mode: multiply;
 }
 
 .banner-header {
