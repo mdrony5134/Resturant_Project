@@ -12,7 +12,7 @@ const PopularFoodCard = ({ foodItem }) => {
         />
         <div className="border-t border-[4px] border-[#BD1F17] w-[52px] mx-auto my-6"></div>
         <div className="text-center">
-          <h1 className="text-[#0A1425] text-[22px] font-bold uppercase mb-3">
+          <h1 className="text-[#0A1425] text-[24px] uppercase mb-3">
             {foodItem.heading}
           </h1>
           <p className="text-[#0A1425]">{foodItem.title}</p>

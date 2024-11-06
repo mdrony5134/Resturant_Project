@@ -57,7 +57,7 @@ const Testimonial = () => {
               <FaSquare />
               <span>Crispy, Every Bite Taste</span>
             </p>
-            <h1 className="text-[50px] font-bold text-[#181818] uppercase">
+            <h1 className="text-[62px] text-[#181818] uppercase">
               What Some of my Customers Say
             </h1>
           </div>
@@ -94,7 +94,7 @@ const Testimonial = () => {
                   </p>
                   <div className="flex justify-between items-center pt-[160px] border-b border-[#0A1425] pb-4">
                     <div>
-                      <h2 className="text-[18px] font-bold">{author}</h2>
+                      <h2 className="text-[18px]">{author}</h2>
                       <p className="text-[14px] text-[#333333]">{location}</p>
                     </div>
                     <div>

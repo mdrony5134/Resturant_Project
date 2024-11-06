@@ -69,7 +69,7 @@ const PopularFoods = () => {
             <FaSquare />
             <span>Crispy, Every Bite Taste</span>
           </p>
-          <h1 className="text-[50px] font-bold text-[#181818]">
+          <h1 className="text-[62px] text-[#181818]">
             POPULAR FOOD ITEMS
           </h1>
         </div>

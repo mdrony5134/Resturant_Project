@@ -11,7 +11,7 @@ const BookTable = () => {
             <FaSquare />
             <span>Book Now</span>
           </p>
-          <h1 className="text-[60px] text-white uppercase font-bold">
+          <h1 className="text-[62px] text-white uppercase">
             Book Your Table
           </h1>
           <p className="text-[#F7F8F9] mb-10">

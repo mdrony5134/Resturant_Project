@@ -13,14 +13,14 @@ const Footer = () => {
   return (
     <div className="footer py-[120px]">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-[35px] text-white font-bold text-center mb-12">
+        <h2 className="text-[62px] text-white text-center mb-12">
           We’re ready to offer you the best dining experience
         </h2>
 
         <div className="text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="w-[312px] text-center">
             <FaRegClock className="text-[#FEBF00] w-[30px] mx-auto  text-[30px] font-bold" />
-            <h2 className="text-[24px] font-bold mt-6 mb-3 uppercase">
+            <h2 className="text-[24px]  mt-6 mb-3 uppercase">
               Opening Hours
             </h2>
             <p>Monday - Sunday</p>
@@ -29,7 +29,7 @@ const Footer = () => {
 
           <div className="w-[312px] text-center">
             <MdOutlinePhoneInTalk className="text-[#FEBF00] w-[30px] mx-auto text-[30px] font-bold" />
-            <h2 className="text-[24px] font-bold mt-6 mb-3 uppercase">
+            <h2 className="text-[24px]  mt-6 mb-3 uppercase">
               Let's Talk
             </h2>
             <p>Phone: +123 456 7890</p>
@@ -38,7 +38,7 @@ const Footer = () => {
 
           <div className="w-[312px] text-center">
             <MdOutlineEmail className="text-[#FEBF00] w-[30px] mx-auto text-[30px] font-bold" />
-            <h2 className="text-[24px] font-bold mt-6 mb-3 uppercase">
+            <h2 className="text-[24px]  mt-6 mb-3 uppercase">
               Book A Table
             </h2>
             <p>Email: info@demo.com</p>
@@ -47,7 +47,7 @@ const Footer = () => {
 
           <div className="w-[312px] text-center">
             <CiLocationOn className="text-[#FEBF00] w-[30px] mx-auto text-[30px] font-bold" />
-            <h2 className="text-[24px] font-bold mt-6 mb-3 uppercase">
+            <h2 className="text-[24px]  mt-6 mb-3 uppercase">
               Our Address
             </h2>
             <p> 123 Stree New York City ,</p>
