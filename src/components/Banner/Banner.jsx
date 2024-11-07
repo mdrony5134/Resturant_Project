@@ -19,7 +19,7 @@ const Banner = () => {
       </div>
 
       <div className="relative lg:w-1/2 w-full flex items-center justify-center mt-8 lg:mt-0">
-        <div className="absolute hidden lg:block lg:left-[675px] lg:top-[25px]">
+        <div className="absolute hidden lg:block -right-6 lg:-top-[25px]">
           <img src="/images/vector.png" alt="vector image" />
         </div>
 
