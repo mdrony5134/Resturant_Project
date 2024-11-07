@@ -115,7 +115,7 @@ const Testimonial = () => {
                         />
                       </div>
                     </div>
-                    <div className="border-b-4 border-[#BD1F17] w-10 relative bottom-1 left-[200px] lg:left-[350px]lef"></div>
+                    <div className="border-b-4 border-[#BD1F17] w-10 relative bottom-1 left-[200px] lg:left-[340px]"></div>
                   </div>
                   <div className="relative lg:w-[760px] lg:h-[555px] w-full h-full overflow-hidden">
                     <img

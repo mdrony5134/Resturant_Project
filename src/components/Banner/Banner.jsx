@@ -28,7 +28,7 @@ const Banner = () => {
           src="/images/bannerImg.png"
           alt="banner image"
         />
-        <div className="bg-[#FEBF00] lg:w-[120px] lg:h-[120px] w-[60px] h-[60px] rounded-full flex items-center justify-center absolute lg:left-[550px] lg:-bottom-[10px] left-[50%] -translate-x-1/2 lg:translate-x-0 lg:-translate-y-0 bottom-[60px]">
+        <div className="bg-[#FEBF00] lg:w-[120px] lg:h-[120px] w-[60px] h-[60px] rounded-full flex items-center justify-center absolute lg:left-[550px] lg:-bottom-[10px] left-[90%] -translate-x-1/2 lg:translate-x-0 lg:-translate-y-0 bottom-[0px]">
           <div className="border-2 border-dashed border-[#BD1F17] rounded-full lg:w-[100px] lg:h-[100px] w-[50px] h-[50px] flex items-center justify-center">
             <h2 className="text-[#0A1425] lg:text-[36px] text-[18px] text-center lg:leading-[36px] leading-[18px] p-2">
               Today Offer
