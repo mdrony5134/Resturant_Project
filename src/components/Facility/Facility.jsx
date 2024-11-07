@@ -19,18 +19,18 @@ const Facility = () => {
     },
   ];
   return (
-    <div className="max-w-7xl mx-auto pt-[74px] pb-[120px]">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="max-w-7xl lg:mx-auto lg:pt-[74px] pt-12 lg:pb-[120px] pb-10 mx-5">
+      <div className="grid gap-9 lg:gap-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {facilityData.map((facility, index) => (
           <div key={index} className="flex items-center gap-4">
-            <div className="w-[90px] h-[90px] bg-[#FFFFFF] rounded-full shadow-xl flex items-center justify-center">
+            <div className="w-[70px] h-[70px] lg:w-[90px] lg:h-[90px] bg-[#FFFFFF] rounded-full shadow-xl flex items-center justify-center">
               <img src={facility.img} alt="" />
             </div>
             <div>
-              <h2 className="text-[30px] text-[#0A1425] font-bold uppercase">
+              <h2 className="text-[24px] lg:text-[30px] text-[#0A1425] uppercase">
                 {facility.heading}
               </h2>
-              <p className="text-[20px] text-[#0A1425]">{facility.title}</p>
+              <p className="text-[18px] text-nowrap lg:text-[20px] text-[#0A1425]">{facility.title}</p>
             </div>
           </div>
         ))}

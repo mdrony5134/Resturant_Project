@@ -4,9 +4,9 @@ const PopularFoodCard = ({ foodItem }) => {
   console.log(foodItem);
   return (
     <div>
-      <div className="bg-[#FFFFFF] w-[305px] shadow-md py-8 rounded-md">
+      <div className="bg-[#FFFFFF] w-[305px] shadow-md py-4 lg:py-8 rounded-md">
         <img
-          className="bg-center w-[120px] h-[100px] mx-auto"
+          className="bg-center lg:w-[120px] lg:h-[100px] w-[150px] h-[125px] mx-auto"
           src={foodItem.image}
           alt="food image"
         />

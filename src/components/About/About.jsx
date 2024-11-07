@@ -4,15 +4,15 @@ import DaynamicComponent from "./DaynamicComponent";
 const About = () => {
   const [activeTab, setActiveTab] = useState("About");
   return (
-    <div className="max-w-7xl mx-auto pt-[30px] md:[60px] lg:pt-[120px]">
-      <div className="flex gap-20">
+    <div className="max-w-7xl lg:mx-auto pt-[30px] md:[60px] lg:pt-[120px] mx-5">
+      <div className="flex gap-10 lg:gap-20 flex-col md:flex-col lg:flex-row">
         <img
-          className="h-[460px]"
+          className="lg:h-[460px] h-full"
           src="/images/aboutImage.png"
           alt="about image"
         />
         <div>
-          <div className="flex gap-12 font-medium border-b border-[#B52B1D] w-[629px]">
+          <div className="flex gap-6 lg:gap-12 font-medium border-b border-[#B52B1D] lg:w-[629px] w-full">
             <button
               className={`${
                 activeTab === "About"
@@ -83,8 +83,8 @@ const About = () => {
           )}
         </div>
       </div>
-      <div className="lg:absolute lg:right-0 lg:-bottom-[1250px] hidden lg:block">
-          <img src="/images/aboutimg.png" alt="about image" />
+      <div className="lg:absolute lg:right-0 lg:-bottom-[1000px] hidden lg:block">
+          <img className="lg:w-[200px] w-full" src="/images/aboutimg.png" alt="about image" />
         </div>
     </div>
   );

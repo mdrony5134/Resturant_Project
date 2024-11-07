@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
 import { FaAngleLeft, FaAngleRight, FaSquare } from "react-icons/fa";
 import PopularFoodCard from "./PopularFoodCard";
 
@@ -46,61 +49,90 @@ const PopularFoods = () => {
     },
   ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slidesToShow = 4; 
+  const swiperRef = useRef(null);
 
-  const nextSlide = () => {
-    if (currentSlide < foodItems.length - slidesToShow) {
-      setCurrentSlide(currentSlide + 1);
+  const handlePrev = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
     }
   };
 
-  const prevSlide = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
+  const handleNext = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
     }
   };
+
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.update();
+    }
+  }, []);
 
   return (
-    <div className="bg-[#FBF7F2] py-[120px]">
-      <div className="max-w-7xl mx-auto flex items-center justify-between pb-[60px]">
+    <div className="bg-[#FBF7F2] py-8 md:py-16 lg:py-[120px]">
+      <div className="max-w-7xl lg:mx-auto flex items-center justify-between pb-7 lg:pb-[60px] mx-5">
         <div>
-          <p className="text-[#BD1F17] flex items-center text-[20px] font-bold gap-1">
+          <p className="text-[#BD1F17] flex items-center text-[16px] lg:text-[20px] font-bold gap-1">
             <FaSquare />
             <span>Crispy, Every Bite Taste</span>
           </p>
-          <h1 className="text-[62px] text-[#181818]">
+          <h1 className="text-[40px] md:text-[62px] text-[#181818]">
             POPULAR FOOD ITEMS
           </h1>
         </div>
-        <div className="flex items-center gap-8">
+
+        <div className="hidden md:flex items-center gap-8">
           <div
+            onClick={handlePrev}
             className="w-[60px] h-[60px] bg-[#FFFFFF] rounded-full flex items-center justify-center shadow-md text-[20px] cursor-pointer"
-            onClick={prevSlide}
           >
             <FaAngleLeft />
           </div>
           <div
+            onClick={handleNext}
             className="w-[60px] h-[60px] bg-[#FFFFFF] rounded-full flex items-center justify-center shadow-md text-[20px] cursor-pointer"
-            onClick={nextSlide}
           >
             <FaAngleRight />
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto overflow-hidden">
-        <div className="lg:absolute lg:left-0 hidden lg:block">
-          <img className="w-[150px]" src="/images/popular.png" alt="popular image" />
+
+      <div className="max-w-7xl lg:mx-auto mx-5">
+        <div>
+          <img className="absolute left-0 w-[130px] lg:block hidden" src="/images/popular.png" alt="popular image" />
         </div>
-        <div
-          className="flex transition-transform duration-300"
-          style={{ transform: `translateX(-${currentSlide * (100 / slidesToShow)}%)` }}
+        <Swiper
+          ref={swiperRef}
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 4 },
+          }}
         >
           {foodItems.map((foodItem, index) => (
-            <div className="flex-shrink-0 w-1/4 p-2" key={index}>
+            <SwiperSlide key={index}>
               <PopularFoodCard foodItem={foodItem} />
-            </div>
+            </SwiperSlide>
           ))}
+        </Swiper>
+      </div>
+
+      {/* Custom navigation buttons for mobile screens */}
+      <div className="flex justify-center mt-8 gap-8 md:hidden">
+        <div
+          onClick={handlePrev}
+          className="w-[50px] h-[50px] bg-[#FFFFFF] rounded-full flex items-center justify-center shadow-md text-[20px] cursor-pointer"
+        >
+          <FaAngleLeft />
+        </div>
+        <div
+          onClick={handleNext}
+          className="w-[50px] h-[50px] bg-[#FFFFFF] rounded-full flex items-center justify-center shadow-md text-[20px] cursor-pointer"
+        >
+          <FaAngleRight />
         </div>
       </div>
     </div>

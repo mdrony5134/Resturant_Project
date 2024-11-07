@@ -5,13 +5,13 @@ import { SlCalender } from "react-icons/sl";
 const BookTable = () => {
   return (
     <div className="book-table">
-      <div className="max-w-7xl mx-auto pt-[120px] pb-[85px]">
-        <div className="w-[635px] mb-10">
-          <p className="text-[#BD1F17] flex items-center text-[20px] font-bold gap-1">
+      <div className="max-w-7xl lg:mx-auto py-8 lg:pt-[120px] lg:pb-[85px] mx-5">
+        <div className="lg:w-[635px] mb-10 w-full">
+          <p className="text-[#BD1F17] flex items-center text-[16px] lg:text-[20px] font-bold gap-1">
             <FaSquare />
             <span>Book Now</span>
           </p>
-          <h1 className="text-[62px] text-white uppercase">
+          <h1 className="text-[40px] lg:text-[62px] text-white uppercase">
             Book Your Table
           </h1>
           <p className="text-[#F7F8F9] mb-10">
@@ -20,7 +20,7 @@ const BookTable = () => {
             molestie vel, ornare non id blandit netus.
           </p>
         </div>
-        <div className="w-[635px] grid grid-cols-2 gap-7">
+        <div className="w-full lg:w-[635px] grid grid-cols-1 lg:grid-cols-2 gap-7">
           <input
             className="bg-transparent border border-[#E5E7EB] py-3 px-4 placeholder:text-white text-white"
             type="text"
@@ -52,7 +52,7 @@ const BookTable = () => {
             />
           </div>
         </div>
-        <div className="w-[635px] mt-7">
+        <div className="w-full lg:w-[635px] mt-7">
           <textarea
             className="bg-transparent border border-[#E5E7EB] py-3 px-4 placeholder:text-white text-white w-full h-[140px] resize-none"
             placeholder="Message"
