@@ -26,7 +26,6 @@ const BookTable = () => {
     const { name, email, reservationDate, totalPeople, message } = formData;
     if (name && email && reservationDate && totalPeople && message) {
       setIsModalOpen(true);
-      setParty(true);
       setFormData({
         name: "",
         email: "",
@@ -41,7 +40,6 @@ const BookTable = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setParty(false);
   };
 
   return (
