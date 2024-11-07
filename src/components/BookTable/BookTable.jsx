@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { FaSquare } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
 
@@ -25,6 +26,7 @@ const BookTable = () => {
     const { name, email, reservationDate, totalPeople, message } = formData;
     if (name && email && reservationDate && totalPeople && message) {
       setIsModalOpen(true);
+      setParty(true);
       setFormData({
         name: "",
         email: "",
@@ -33,13 +35,13 @@ const BookTable = () => {
         message: "",
       });
     } else {
-      alert("Please fill in all fields.!");
+      alert("Please fill in all fields!");
     }
   };
 
-  // close modal
   const closeModal = () => {
     setIsModalOpen(false);
+    setParty(false);
   };
 
   return (
@@ -53,7 +55,7 @@ const BookTable = () => {
           <h1 className="text-[40px] lg:text-[62px] text-white uppercase">
             Book Your Table
           </h1>
-          <p className="text-[#F7F8F9] mb-10 textju">
+          <p className="text-[#F7F8F9] mb-10">
             Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo
             <br />
             molestie vel, ornare non id blandit netus.
@@ -122,11 +124,12 @@ const BookTable = () => {
         </div>
 
         {/* booking modal */}
-
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-6 rounded-lg max-w-sm w-full text-center">
-              <h2 className="text-2xl bg-gradient bg-clip-text text-transparent">Congratulations!</h2>
+              <h2 className="text-2xl bg-gradient bg-clip-text text-transparent">
+                Congratulations!
+              </h2>
               <p className="text-[30px]">🤝</p>
               <p>Your table has been successfully booked.</p>
               <button
