@@ -2,13 +2,13 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="max-w-7xl lg:mx-auto pt-[32px] lg:pt-[130px] pb-[20px] lg:pb-[160px] flex items-center flex-col lg:flex-row mx-5">
+    <div className="max-w-7xl lg:mx-auto pt-[60px] lg:pt-[130px] pb-[20px] lg:pb-[160px] flex items-center flex-col lg:flex-row mx-5">
       <div className="flex flex-col items-center lg:items-start lg:w-1/2 w-full px-4 lg:px-0">
-        <h1 className="text-[32px] md:text-[48px] lg:text-[120px] text-white lg:leading-[130px] leading-[1.2] uppercase lg:absolute lg:top-[300px] lg:w-[830px] w-full lg:text-left banner-header lg:z-50">
+        <h1 className="text-[32px] md:text-[48px] lg:text-[120px] text-white lg:leading-[130px] leading-[1.2] uppercase lg:absolute lg:top-[280px] lg:w-[830px] w-full lg:text-left banner-header lg:z-50">
           Taste the authentic Saudi cuisine
         </h1>
         <div className="lg:mt-64 md:mt-32 w-full">
-          <p className="text-[16px] md:text-[20px] lg:text-[24px] text-white mt-4 mb-5  lg:mt-8 lg:mb-9 lg:w-[559px] w-full">
+          <p className="text-[16px] md:text-[20px] lg:text-[24px] text-white mt-4 mb-5  lg:mt-20 lg:mb-9 lg:w-[559px] w-full">
             Among the best Saudi chefs in the world, serving you something
             beyond flavor.
           </p>

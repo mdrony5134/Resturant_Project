@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
@@ -6,56 +6,80 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isSidebarOpen, setIsSideBarOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleSidebar = () => {
     setIsSideBarOpen(!isSidebarOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="py-8 header">
-      <nav className="max-w-7xl lg:mx-auto flex items-center justify-between mx-5">
-        <div className="flex items-center gap-2">
-          <img src="/images/logo.png" alt="logo" />
-          <span className="text-[28px] text-[#FFFFFF] font-semibold">
-            Restaurant
-          </span>
-        </div>
+      <nav
+        className={`w-full fixed left-0 right-0 top-0 z-[500] transition-all ease-in-out duration-700  ${
+          isScrolled ? "bg-gradient shadow-md" : "bg-transparent"
+        } `}
+      >
+        <div className="max-w-7xl lg:mx-auto flex items-center justify-between mx-5 py-7">
+          <div className="flex items-center gap-2">
+            <img src="/images/logo.png" alt="logo" />
+            <span className="text-[28px] text-[#FFFFFF] font-semibold">
+              Restaurant
+            </span>
+          </div>
 
-        <div className="hidden md:flex items-center gap-10 ml-14">
-          {["Home", "About", "Portfolio", "Clients", "Blog", "Contact"].map(
-            (link, index) => (
-              <li key={index} className="list-none text-white font-medium">
-                <a href="#">{link}</a>
-              </li>
-            )
-          )}
-        </div>
+          <div className="hidden md:flex items-center gap-10 ml-14">
+            {["Home", "About", "Portfolio", "Clients", "Blog", "Contact"].map(
+              (link, index) => (
+                <li key={index} className="list-none text-white font-medium">
+                  <a href="#">{link}</a>
+                </li>
+              )
+            )}
+          </div>
 
-        <div className="hidden md:block">
-          <button className="uppercase bg-[#FEBF00] px-6 py-[10px] font-bold">
-            Book A Table
+          <div className="hidden md:block">
+            <button className="uppercase bg-[#FEBF00] px-6 py-[10px] font-bold">
+              Book A Table
+            </button>
+          </div>
+
+          {/* Mobile Menu Toggle Button */}
+          <button
+            type="button"
+            className="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white"
+            onClick={toggleSidebar}
+            aria-controls="navbar-cta"
+          >
+            {isSidebarOpen ? (
+              ""
+            ) : (
+              <RxHamburgerMenu className="text-white text-[30px]" />
+            )}
           </button>
         </div>
-
-        {/* Mobile Menu Toggle Button */}
-        <button
-          type="button"
-          className="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-white"
-          onClick={toggleSidebar}
-          aria-controls="navbar-cta"
-        >
-          {isSidebarOpen ? (
-            ""
-          ) : (
-            <RxHamburgerMenu className="text-white text-[30px]" />
-          )}
-        </button>
       </nav>
 
       {/* Sidebar for Mobile with Animation */}
       <AnimatePresence>
         {isSidebarOpen && (
-          <div className="fixed inset-0 bg-gray-300 bg-opacity-50 z-50">
+          <div className="fixed inset-0 bg-gray-300 bg-opacity-50 z-[600]">
             <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}

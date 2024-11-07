@@ -2,8 +2,13 @@ import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay"; 
+
 import { FaAngleLeft, FaAngleRight, FaSquare } from "react-icons/fa";
 import PopularFoodCard from "./PopularFoodCard";
+
+import { Autoplay } from "swiper/modules";
 
 const PopularFoods = () => {
   const foodItems = [
@@ -100,12 +105,18 @@ const PopularFoods = () => {
 
       <div className="max-w-7xl lg:mx-auto mx-5">
         <div>
-          <img className="absolute left-0 w-[130px] lg:block hidden" src="/images/popular.png" alt="popular image" />
+          <img
+            className="absolute left-0 w-[130px] lg:block hidden"
+            src="/images/popular.png"
+            alt="popular image"
+          />
         </div>
         <Swiper
           ref={swiperRef}
           spaceBetween={20}
           slidesPerView={1}
+          modules={[Autoplay]} 
+          autoplay={{delay: 2000, disableOnInteraction: false}}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
