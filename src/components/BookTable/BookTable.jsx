@@ -61,7 +61,7 @@ const BookTable = () => {
         </div>
         <div className="w-full lg:w-[635px] grid grid-cols-1 lg:grid-cols-2 gap-7">
           <input
-            className="bg-transparent border border-[#E5E7EB] py-3 px-4 placeholder:text-white text-white"
+            className="bg-transparent border border-[#E5E7EB] py-3 px-4 placeholder:text-white text-white focus:outline-none"
             type="text"
             name="name"
             value={formData.name}
@@ -69,7 +69,7 @@ const BookTable = () => {
             placeholder="Your Name"
           />
           <input
-            className="bg-transparent border border-[#E5E7EB] py-3 px-4 placeholder:text-white text-white"
+            className="bg-transparent border border-[#E5E7EB] py-3 px-4 placeholder:text-white text-white focus:outline-none"
             type="email"
             name="email"
             value={formData.email}
@@ -78,7 +78,7 @@ const BookTable = () => {
           />
           <div className="relative">
             <input
-              className="bg-transparent border border-[#E5E7EB] py-3 px-4 pr-10 placeholder:text-white text-white w-full"
+              className="bg-transparent border border-[#E5E7EB] py-3 px-4 pr-10 placeholder:text-white text-white w-full focus:outline-none"
               type="text"
               name="reservationDate"
               value={formData.reservationDate}
@@ -89,7 +89,7 @@ const BookTable = () => {
           </div>
           <div className="relative">
             <input
-              className="bg-transparent border border-[#E5E7EB] py-3 px-4 pr-10 placeholder:text-white text-white w-full"
+              className="bg-transparent border border-[#E5E7EB] py-3 px-4 pr-10 placeholder:text-white text-white w-full focus:outline-none"
               type="text"
               name="totalPeople"
               value={formData.totalPeople}
@@ -105,7 +105,7 @@ const BookTable = () => {
         </div>
         <div className="w-full lg:w-[635px] mt-7">
           <textarea
-            className="bg-transparent border border-[#E5E7EB] py-3 px-4 placeholder:text-white text-white w-full h-[140px] resize-none"
+            className="bg-transparent border border-[#E5E7EB] py-3 px-4 placeholder:text-white text-white w-full h-[140px] resize-none focus:outline-none"
             placeholder="Message"
             name="message"
             onChange={handleChange}
@@ -124,7 +124,7 @@ const BookTable = () => {
         {/* booking modal */}
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white p-6 rounded-lg max-w-sm w-full text-center">
+            <div className="bg-white p-6 rounded-lg max-w-sm w-full text-center mx-5 lg:mx-0">
               <h2 className="text-2xl bg-gradient bg-clip-text text-transparent">
                 Congratulations!
               </h2>
