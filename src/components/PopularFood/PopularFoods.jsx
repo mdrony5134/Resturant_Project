@@ -11,6 +11,8 @@ import PopularFoodCard from "./PopularFoodCard";
 import { Autoplay } from "swiper/modules";
 
 const PopularFoods = () => {
+
+  // food items data
   const foodItems = [
     {
       image: "/foodImage/burger.png",

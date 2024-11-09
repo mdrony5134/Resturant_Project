@@ -7,10 +7,58 @@ const About = () => {
     <div className="max-w-7xl lg:mx-auto pt-[30px] md:[60px] lg:pt-[120px] mx-5">
       <div className="flex gap-10 lg:gap-20 flex-col md:flex-col lg:flex-row">
         <img
-          className="lg:h-[460px] h-full"
+          className="lg:h-[460px] h-full w-full"
           src="/images/aboutImage.png"
           alt="about image"
         />
+
+        <div className="flex items-center justify-center absolute mt-7 ml-4 sm:mt-4 lg:mt-8 sm:ml-2 lg:ml-8">
+          <div className="flex items-center space-x-4 bg-white p-4 rounded-[20px] shadow-md w-auto">
+            <div className="relative flex items-center justify-center w-24 h-24 lg:w-28 lg:h-28">
+              <svg className="w-full h-full absolute top-0 left-0">
+                <circle
+                  className="text-gray-300"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                  strokeWidth="6"
+                  fill="none"
+                  stroke="currentColor"
+                />
+                <circle
+                  className="text-[#FEBF00]"
+                  cx="50%"
+                  cy="50%"
+                  r="40"
+                  strokeWidth="6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeDasharray="301.2"
+                  strokeDashoffset="90.62"
+                  strokeLinecap="round"
+                />
+
+                <circle
+                  cx="75"
+                  cy="21"
+                  r="6"
+                  fill="white"
+                  stroke="#FEBF00"
+                  strokeWidth="2"
+                />
+              </svg>
+
+              <div className="absolute font-semibold text-[20px] lg:text-[26px]">
+                50+
+              </div>
+            </div>
+            <div className="font-medium text-[#181818]">
+              <p className="text-sm sm:text-xs lg:text-base">Market</p>
+              <p className="text-sm sm:text-xs lg:text-base">Experiences</p>
+            </div>
+          </div>
+        </div>
+
         <div>
           <div className="flex gap-6 lg:gap-12 font-medium border-b border-[#B52B1D] lg:w-[629px] w-full">
             <button
@@ -84,8 +132,12 @@ const About = () => {
         </div>
       </div>
       <div className="lg:absolute lg:right-0 lg:-bottom-[1000px] hidden lg:block">
-          <img className="lg:w-[200px] w-full" src="/images/aboutimg.png" alt="about image" />
-        </div>
+        <img
+          className="lg:w-[200px] w-full"
+          src="/images/aboutimg.png"
+          alt="about image"
+        />
+      </div>
     </div>
   );
 };
