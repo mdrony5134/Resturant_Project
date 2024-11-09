@@ -4,7 +4,7 @@ A modern, responsive web application designed for showcasing popular food items 
 
 ## Live Link
 
-[Live Demo](https://food-resturant-web.netlify.app/)
+ Live Demo: https://food-resturant-web.netlify.app/
 
 ## Technologies Used
 - **React.js** - A JavaScript library for building user interfaces.
